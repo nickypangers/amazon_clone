@@ -49,3 +49,10 @@
   border-color: #a88734 #9c7e31 #846e29;
   color: #111;
 }
+
+.payment__priceContainer {
+  margin-top: 20px;
+  padding: 20px 10px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
