@@ -1,21 +1,14 @@
 .nav {
+  height: fit-content;
   display: flex;
   flex-direction: column;
   background-color: #131921;
   position: sticky;
   top: 0;
-  height: 80px;
   z-index: 100;
 }
 
-.demo {
-  margin-top: -3px;
-  color: white;
-  text-align: center;
-}
-
 .header {
-  height: 60px;
   display: flex;
   align-items: center;
   background-color: #131921;

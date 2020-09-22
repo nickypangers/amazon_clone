@@ -1,0 +1,47 @@
+.subheader {
+  height: fit-content;
+  font-size: 14px;
+  background-color: #232f3e;
+  width: 100%;
+}
+
+.subheader__content {
+  width: 100%;
+  float: left;
+  display: flex;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+}
+
+.subheader__nav {
+  display: flex;
+  margin-left: 150px;
+  align-self: center;
+}
+
+.subheader__navOption {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.subheader__location {
+  display: flex;
+}
+
+.subheader__locationIcon {
+  align-self: center;
+}
+
+.subheader__locationContent {
+  display: flex;
+  flex-direction: column;
+}
+
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+  color: white;
+}

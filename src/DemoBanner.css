@@ -1,0 +1,11 @@
+.demobanner {
+  background-color: #232f3e;
+  color: white;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.demobanner__content {
+  padding: 5px 0;
+}

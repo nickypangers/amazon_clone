@@ -1,19 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
+import axios from "axios";
+import DemoBanner from "./DemoBanner";
+import Subheader from "./Subheader";
 
 function Header() {
   const [{ basket, user }, dispatch] = useStateValue();
+  const [location, setLocation] = useState(null);
+
+  const apiUrl = "https://freegeoip.app/json/";
+
+  const fetchData = async () => {
+    const response = await axios.get(apiUrl);
+    console.log(response.data);
+    setLocation(response.data);
+  };
 
   const handleAuthentication = () => {
     if (user) {
       auth.signOut();
     }
   };
+
+  useEffect(() => {
+    if (location == null) {
+      fetchData();
+    }
+  });
 
   return (
     <div className="nav">
@@ -62,9 +80,8 @@ function Header() {
           </Link>
         </div>
       </div>
-      <div className="demo">
-        <h5>This is a demo app created by Nixon Pang.</h5>
-      </div>
+      <Subheader location={location?.country_name} />
+      <DemoBanner />
     </div>
   );
 }
